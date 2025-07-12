@@ -1,15 +1,12 @@
 name: Deploy docs to GitHub Pages
-on:
-  push:
-    branches:
-      - main
+on: push
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: puzl-ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
